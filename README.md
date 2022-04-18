@@ -9,7 +9,7 @@
 [![License](https://img.shields.io/github/license/blitz-php/coding-standard)](LICENSE)
 [![Total Downloads](http://poser.pugx.org/blitz-php/coding-standard/downloads)](https://packagist.org/packages/blitz-php/coding-standard)
 
-Cette bibliothèque contient les normes de codage officielles de Blitz-PHP basées sur [PHP CS Fixer][1] et alimenté par [Nexus CS Config][2].
+Cette bibliothèque contient les normes de codage officielles de Blitz-PHP basées sur [PHP CS Fixer][1] et alimenté par [Nexus CS Config][2]. Les règles sont inspirées de celles de [CodeIgniter](https://github.com/CodeIgniter/coding-standard)
 
 ## Installation
 
