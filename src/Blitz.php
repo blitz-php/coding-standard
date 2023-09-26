@@ -172,7 +172,6 @@ final class Blitz extends AbstractRuleset
                     'pi',
                 ],
             ],
-            'function_typehint_space'          => true,
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
                     'author',
@@ -208,6 +207,7 @@ final class Blitz extends AbstractRuleset
             'linebreak_after_opening_tag' => true,
             'list_syntax'                 => ['syntax' => 'short'],
             'logical_operators'           => true,
+            'long_to_shorthand_operator'  => true,
             'lowercase_cast'              => true,
             'lowercase_keywords'          => true,
             'lowercase_static_reference'  => true,
@@ -220,7 +220,7 @@ final class Blitz extends AbstractRuleset
                 'on_multiline'                     => 'ensure_fully_multiline',
             ],
             'method_chaining_indentation'             => true,
-            'modernize_strpos'                        => false, // requires 8.0+
+            'modernize_strpos'                        => version_compare(PHP_VERSION, '8.0.0', '>='), // requires 8.0+,
             'modernize_types_casting'                 => true,
             'multiline_comment_opening_closing'       => true,
             'multiline_whitespace_before_semicolons'  => ['strategy' => 'no_multi_line'],
@@ -232,18 +232,34 @@ final class Blitz extends AbstractRuleset
                 'named_class'     => true,
                 'anonymous_class' => true,
             ],
-            'no_alias_functions'                          => ['sets' => ['@all']],
-            'no_alias_language_construct_call'            => true,
-            'no_alternative_syntax'                       => ['fix_non_monolithic_code' => false],
-            'no_binary_string'                            => true,
-            'no_blank_lines_after_class_opening'          => true,
-            'no_blank_lines_after_phpdoc'                 => true,
-            'no_break_comment'                            => ['comment_text' => 'no break'],
-            'no_closing_tag'                              => true,
-            'no_empty_comment'                            => true,
-            'no_empty_phpdoc'                             => true,
-            'no_empty_statement'                          => true,
-            'no_extra_blank_lines'                        => ['tokens' => ['extra']],
+            'no_alias_functions'                 => ['sets' => ['@all']],
+            'no_alias_language_construct_call'   => true,
+            'no_alternative_syntax'              => ['fix_non_monolithic_code' => false],
+            'no_binary_string'                   => true,
+            'no_blank_lines_after_class_opening' => true,
+            'no_blank_lines_after_phpdoc'        => true,
+            'no_break_comment'                   => ['comment_text' => 'no break'],
+            'no_closing_tag'                     => true,
+            'no_empty_comment'                   => true,
+            'no_empty_phpdoc'                    => true,
+            'no_empty_statement'                 => true,
+            'no_extra_blank_lines'               => [
+                'tokens' => [
+                    'attribute',
+                    'break',
+                    'case',
+                    'continue',
+                    'curly_brace_block',
+                    'default',
+                    'extra',
+                    'parenthesis_brace_block',
+                    'return',
+                    'square_brace_block',
+                    'switch',
+                    'throw',
+                    'use',
+                ],
+            ],
             'no_homoglyph_names'                          => true,
             'no_leading_import_slash'                     => true,
             'no_leading_namespace_whitespace'             => true,
@@ -257,7 +273,6 @@ final class Blitz extends AbstractRuleset
             'no_space_around_double_colon'                => true,
             'no_spaces_after_function_name'               => true,
             'no_spaces_around_offset'                     => ['positions' => ['inside', 'outside']],
-            'no_spaces_inside_parenthesis'                => true,
             'no_superfluous_elseif'                       => true,
             'no_superfluous_phpdoc_tags'                  => [
                 'allow_mixed'         => true,
@@ -304,9 +319,10 @@ final class Blitz extends AbstractRuleset
             'normalize_index_brace'                            => true,
             'not_operator_with_space'                          => false,
             'not_operator_with_successor_space'                => true,
+            'nullable_type_declaration'                        => version_compare(PHP_VERSION, '8.0.0', '>='), // requires 8.0+,
             'nullable_type_declaration_for_default_null_value' => ['use_nullable_type_declaration' => true],
             'object_operator_without_whitespace'               => true,
-            'octal_notation'                                   => false, // requires 8.1+
+            'octal_notation'                                   => version_compare(PHP_VERSION, '8.1.0', '>='), // requires 8.1+
             'operator_linebreak'                               => ['only_booleans' => true, 'position' => 'beginning'],
             'ordered_class_elements'                           => [
                 'order' => [
@@ -321,10 +337,11 @@ final class Blitz extends AbstractRuleset
             'ordered_imports' => [
                 'sort_algorithm' => 'alpha',
                 'imports_order'  => ['class', 'function', 'const'],
+                'case_sensitive' => false,
             ],
             'ordered_interfaces' => false,
             'ordered_traits'     => false,
-            'ordered_types'      => true,
+            'ordered_types'      => version_compare(PHP_VERSION, '8.0.0', '>='), // requires 8.0+,
             'php_unit_construct' => [
                 'assertions' => [
                     'assertSame',
@@ -333,7 +350,12 @@ final class Blitz extends AbstractRuleset
                     'assertNotSame',
                 ],
             ],
-            'php_unit_data_provider_static'          => false,
+            'php_unit_data_provider_name' => [
+                'prefix' => 'provide',
+                'suffix' => '',
+            ],
+            'php_unit_data_provider_return_type'     => true,
+            'php_unit_data_provider_static'          => ['force' => true],
             'php_unit_dedicate_assert'               => ['target' => 'newest'],
             'php_unit_dedicate_assert_internal_type' => ['target' => 'newest'],
             'php_unit_expectation'                   => ['target' => 'newest'],
@@ -479,6 +501,7 @@ final class Blitz extends AbstractRuleset
             'phpdoc_types_order'                            => [
                 'null_adjustment' => 'always_last',
                 'sort_algorithm'  => 'alpha',
+                'case_sensitive'  => false,
             ],
             'phpdoc_var_annotation_correct_order' => true,
             'phpdoc_var_without_name'             => true,
@@ -494,6 +517,7 @@ final class Blitz extends AbstractRuleset
             ],
             'regular_callable_call'              => true,
             'return_assignment'                  => true,
+            'return_to_yield_from'               => false,
             'return_type_declaration'            => ['space_before' => 'none'],
             'self_accessor'                      => false,
             'self_static_accessor'               => true,
@@ -581,6 +605,7 @@ final class Blitz extends AbstractRuleset
             ],
             'single_trait_insert_per_statement' => true,
             'space_after_semicolon'             => ['remove_in_empty_for_expressions' => true],
+            'spaces_inside_parentheses'         => ['space' => 'none'],
             'standardize_increment'             => true,
             'standardize_not_equals'            => true,
             'statement_indentation'             => true,
@@ -599,8 +624,9 @@ final class Blitz extends AbstractRuleset
                 'after_heredoc' => true,
                 'elements'      => ['arrays'],
             ],
-            'trim_array_spaces' => true,
-            'types_spaces'      => [
+            'trim_array_spaces'       => true,
+            'type_declaration_spaces' => ['elements' => ['function', 'property']],
+            'types_spaces'            => [
                 'space'                => 'none',
                 'space_multiple_catch' => 'none',
             ],
@@ -609,6 +635,7 @@ final class Blitz extends AbstractRuleset
             'visibility_required'             => ['elements' => ['const', 'method', 'property']],
             'void_return'                     => false, // changes method signature
             'whitespace_after_comma_in_array' => ['ensure_single_space' => true],
+            'yield_from_array_to_yields'      => false,
             'yoda_style'                      => [
                 'equal'                => false,
                 'identical'            => null,
