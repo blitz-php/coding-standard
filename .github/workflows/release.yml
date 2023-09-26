@@ -11,16 +11,13 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Create release
-        uses: actions/create-release@latest
+        uses: crazy-max/ghaction-github-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }} Coding Standard
+          name: ${{ github.ref_name }} Coding Standard
           draft: true
           prerelease: false
-          body: |
-            Please refer to the [CHANGELOG](CHANGELOG.md) for the detailed list of changes.
