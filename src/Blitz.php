@@ -100,12 +100,12 @@ final class Blitz extends AbstractRuleset
                     'phpstan-ignore-next-line',
                 ],
             ],
-            'compact_nullable_typehint'               => true,
+            'compact_nullable_type_declaration'       => true,
             'concat_space'                            => ['spacing' => 'one'],
             'constant_case'                           => ['case' => 'lower'],
             'control_structure_braces'                => true,
             'control_structure_continuation_position' => ['position' => 'same_line'],
-            'curly_braces_position'                   => [
+            'braces_position'                         => [
                 'control_structures_opening_brace'          => 'same_line',
                 'functions_opening_brace'                   => 'next_line_unless_newline_at_signature_end',
                 'anonymous_functions_opening_brace'         => 'same_line',
@@ -219,16 +219,16 @@ final class Blitz extends AbstractRuleset
                 'keep_multiple_spaces_after_comma' => false,
                 'on_multiline'                     => 'ensure_fully_multiline',
             ],
-            'method_chaining_indentation'             => true,
-            'modernize_strpos'                        => version_compare(PHP_VERSION, '8.0.0', '>='), // requires 8.0+,
-            'modernize_types_casting'                 => true,
-            'multiline_comment_opening_closing'       => true,
-            'multiline_whitespace_before_semicolons'  => ['strategy' => 'no_multi_line'],
-            'native_constant_invocation'              => false,
-            'native_function_casing'                  => true,
-            'native_function_invocation'              => false,
-            'native_function_type_declaration_casing' => true,
-            'new_with_braces'                         => [
+            'method_chaining_indentation'            => true,
+            'modernize_strpos'                       => version_compare(PHP_VERSION, '8.0.0', '>='),   // requires 8.0+,
+            'modernize_types_casting'                => true,
+            'multiline_comment_opening_closing'      => true,
+            'multiline_whitespace_before_semicolons' => ['strategy' => 'no_multi_line'],
+            'native_constant_invocation'             => false,
+            'native_function_casing'                 => true,
+            'native_function_invocation'             => false,
+            'native_type_declaration_casing'         => true,
+            'new_with_parentheses'                   => [
                 'named_class'     => true,
                 'anonymous_class' => true,
             ],
@@ -301,7 +301,7 @@ final class Blitz extends AbstractRuleset
                     'yield',
                 ],
             ],
-            'no_unneeded_curly_braces'                         => ['namespaces' => true],
+            'no_unneeded_braces'                               => ['namespaces' => true],
             'no_unneeded_final_method'                         => ['private_methods' => true],
             'no_unneeded_import_alias'                         => true,
             'no_unreachable_default_argument_value'            => true,
@@ -319,10 +319,10 @@ final class Blitz extends AbstractRuleset
             'normalize_index_brace'                            => true,
             'not_operator_with_space'                          => false,
             'not_operator_with_successor_space'                => true,
-            'nullable_type_declaration'                        => version_compare(PHP_VERSION, '8.0.0', '>='), // requires 8.0+,
+            'nullable_type_declaration'                        => version_compare(PHP_VERSION, '8.0.0', '>='),            // requires 8.0+,
             'nullable_type_declaration_for_default_null_value' => ['use_nullable_type_declaration' => true],
             'object_operator_without_whitespace'               => true,
-            'octal_notation'                                   => version_compare(PHP_VERSION, '8.1.0', '>='), // requires 8.1+
+            'octal_notation'                                   => version_compare(PHP_VERSION, '8.1.0', '>='),            // requires 8.1+
             'operator_linebreak'                               => ['only_booleans' => true, 'position' => 'beginning'],
             'ordered_class_elements'                           => [
                 'order' => [
