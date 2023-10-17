@@ -24,7 +24,7 @@ final class Blitz extends AbstractRuleset
 {
     public function __construct()
     {
-        $this->name = 'Blitz PHP Coding Standards';
+        $this->name = 'BlitzPHP Coding Standards';
 
         $this->rules = [
             'align_multiline_comment'                  => ['comment_type' => 'phpdocs_only'],
@@ -32,6 +32,7 @@ final class Blitz extends AbstractRuleset
             'array_push'                               => true,
             'array_syntax'                             => ['syntax' => 'short'],
             'assign_null_coalescing_to_coalesce_equal' => true,
+            'attribute_empty_parentheses'              => false,
             'backtick_to_shell_exec'                   => true,
             'binary_operator_spaces'                   => [
                 'default'   => 'single_space',
@@ -156,7 +157,7 @@ final class Blitz extends AbstractRuleset
             'fopen_flag_order'                       => true,
             'fopen_flags'                            => ['b_mode' => true],
             'full_opening_tag'                       => true,
-            'fully_qualified_strict_types'           => true,
+            'fully_qualified_strict_types'           => ['leading_backslash_in_global_namespace' => false],
             'function_declaration'                   => [
                 'closure_function_spacing'   => 'one',
                 'closure_fn_spacing'         => 'one',
@@ -218,6 +219,7 @@ final class Blitz extends AbstractRuleset
                 'after_heredoc'                    => false,
                 'keep_multiple_spaces_after_comma' => false,
                 'on_multiline'                     => 'ensure_fully_multiline',
+                'attribute_placement'              => 'standalone',
             ],
             'method_chaining_indentation'            => true,
             'modernize_strpos'                       => version_compare(PHP_VERSION, '8.0.0', '>='),   // requires 8.0+,
@@ -451,8 +453,9 @@ final class Blitz extends AbstractRuleset
                     'uses',
                 ],
             ],
-            'phpdoc_param_order'           => false,
-            'phpdoc_return_self_reference' => [
+            'phpdoc_param_order'                       => false,
+            'phpdoc_readonly_class_comment_to_keyword' => false,
+            'phpdoc_return_self_reference'             => [
                 'replacements' => [
                     'this'    => '$this',
                     '@this'   => '$this',
