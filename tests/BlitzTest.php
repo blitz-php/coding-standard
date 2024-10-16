@@ -13,20 +13,21 @@ declare(strict_types=1);
 
 namespace BlitzPHP\CodingStandard\Tests;
 
+use BlitzPHP\CodingStandard\Blitz;
 use Nexus\CsConfig\Ruleset\RulesetInterface;
 use Nexus\CsConfig\Test\AbstractRulesetTestCase;
 use PhpCsFixer\Preg;
+use PHPUnit\Framework\Attributes\CoversClass;
 
 /**
  * @internal
- *
- * @covers \BlitzPHP\CodingStandard\Blitz
  */
+#[CoversClass(Blitz::class)]
 final class BlitzTest extends AbstractRulesetTestCase
 {
     protected static function createRuleset(): RulesetInterface
     {
-        /** @phpstan-var class-string<RulesetInterface> $ruleset */
+        /** @var class-string<RulesetInterface> $ruleset */
         $ruleset = Preg::replace('/^(BlitzPHP\\\\CodingStandard)\\\\Tests(\\\\\S+)Test/', '$1$2', self::class);
 
         return new $ruleset();
