@@ -4,7 +4,7 @@
 [![Coding Standards](https://github.com/blitz-php/coding-standard/actions/workflows/test-coding-standards.yml/badge.svg)](https://github.com/blitz-php/coding-standard/actions/workflows/test-coding-standards.yml)
 [![PHPStan Static Analysis](https://github.com/blitz-php/coding-standard/actions/workflows/test-phpstan.yml/badge.svg)](https://github.com/blitz-php/coding-standard/actions/workflows/test-phpstan.yml)
 [![PHPStan level](https://img.shields.io/badge/PHPStan-max%20level-brightgreen)](phpstan.neon.dist)
-[![Coverage Status](https://coveralls.io/repos/github/blitz-php/coding-standard/badge.svg?branch=develop)](https://coveralls.io/github/blitz-php/coding-standard?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/github/blitz-php/coding-standard/badge.svg?branch=main)](https://coveralls.io/github/blitz-php/coding-standard?branch=main)
 [![Latest Stable Version](http://poser.pugx.org/blitz-php/coding-standard/v)](https://packagist.org/packages/blitz-php/coding-standard)
 [![License](https://img.shields.io/github/license/blitz-php/coding-standard)](LICENSE)
 [![Total Downloads](http://poser.pugx.org/blitz-php/coding-standard/downloads)](https://packagist.org/packages/blitz-php/coding-standard)
