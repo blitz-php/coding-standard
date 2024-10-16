@@ -5,9 +5,9 @@
 [![PHPStan Static Analysis](https://github.com/blitz-php/coding-standard/actions/workflows/test-phpstan.yml/badge.svg)](https://github.com/blitz-php/coding-standard/actions/workflows/test-phpstan.yml)
 [![PHPStan level](https://img.shields.io/badge/PHPStan-max%20level-brightgreen)](phpstan.neon.dist)
 [![Coverage Status](https://coveralls.io/repos/github/blitz-php/coding-standard/badge.svg?branch=main)](https://coveralls.io/github/blitz-php/coding-standard?branch=main)
-[![Latest Stable Version](http://poser.pugx.org/blitz-php/coding-standard/v)](https://packagist.org/packages/blitz-php/coding-standard)
+[![Latest Stable Version](https://img.shields.io/packagist/v/blitz-php/coding-standard.svg?style=flat-square)](https://packagist.org/packages/blitz-php/coding-standard)
 [![License](https://img.shields.io/github/license/blitz-php/coding-standard)](LICENSE)
-[![Total Downloads](http://poser.pugx.org/blitz-php/coding-standard/downloads)](https://packagist.org/packages/blitz-php/coding-standard)
+[![Total Downloads](https://poser.pugx.org/blitz-php/coding-standard/downloads)](https://packagist.org/packages/blitz-php/coding-standard)
 
 Cette bibliothèque contient les normes de codage officielles de Blitz-PHP basées sur [PHP CS Fixer][1] et alimenté par [Nexus CS Config][2]. Les règles sont inspirées de celles de [CodeIgniter](https://github.com/CodeIgniter/coding-standard)
 
