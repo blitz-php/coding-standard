@@ -16,19 +16,18 @@ namespace BlitzPHP\CodingStandard\Tests;
 use BlitzPHP\CodingStandard\Blitz;
 use Nexus\CsConfig\Ruleset\RulesetInterface;
 use Nexus\CsConfig\Test\AbstractRulesetTestCase;
-use PhpCsFixer\Preg;
 use PHPUnit\Framework\Attributes\CoversClass;
 
 /**
  * @internal
  */
-#[CoversClass(Blitz::class)]
-final class BlitzTest extends AbstractRulesetTestCase
+#[CoversClass(CodeIgniter4::class)]
+final class CodeIgniter4Test extends AbstractRulesetTestCase
 {
     protected static function createRuleset(): RulesetInterface
     {
         /** @var class-string<RulesetInterface> $ruleset */
-        $ruleset = Preg::replace('/^(BlitzPHP\\\\CodingStandard)\\\\Tests(\\\\\S+)Test/', '$1$2', self::class);
+        $ruleset = preg_replace('/^(BlitzPHP\\\\CodingStandard)\\\\Tests(\\\\\S+)Test/', '$1$2', self::class);
 
         return new $ruleset();
     }

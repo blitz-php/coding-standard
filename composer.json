@@ -3,6 +3,10 @@
     "type": "library",
     "description": "Normes de codage officielles pour Blitz PHP basées sur PHP CS Fixer",
     "license": "MIT",
+    "keywords": [
+        "phpcs",
+        "static analysis"
+    ],
     "authors": [
         {
             "name": "Dimitri Sitchet Tomkeu",
@@ -10,15 +14,15 @@
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
         "ext-tokenizer": "*",
-        "friendsofphp/php-cs-fixer": "^3.61.1",
-        "nexusphp/cs-config": "^3.24"
+        "friendsofphp/php-cs-fixer": "^3.94",
+        "nexusphp/cs-config": "^3.28"
     },
     "require-dev": {
-        "nexusphp/tachycardia": "^2.3",
-        "phpstan/phpstan": "^1.11",
-        "phpunit/phpunit": "^10.5 || ^11.2"
+        "nexusphp/tachycardia": "^2.4",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^11.5 || ^12.5"
     },
     "config": {
         "optimize-autoloader": true,
@@ -38,7 +42,7 @@
    "minimum-stability": "dev",
     "prefer-stable": true,
     "support": {
-        "forum": "http://forum.blitz-php.com/",
+        "forum": "https://blitz-php.byethost14.com/goto/forum",
         "source": "https://github.com/blitz-php/coding-standard"
     }
 }
